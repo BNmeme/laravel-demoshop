@@ -13,17 +13,25 @@ Route::get('/','App\Http\Controllers\HomeController@index');
 
 Route::get('/trang-chu','App\Http\Controllers\HomeController@index');
 
-Route::get('/product', function () {
-    return view('pages.product');
-});
+// Route::get('/product', function () {
+//     return view('pages.product');
+// });
 
-Route::get('/news', function () {
-    return view('pages.news');
-});
+Route::get('/product','App\Http\Controllers\HomeController@product');
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
+
+// Route::get('/news', function () {
+//     return view('pages.news');
+// });
+
+Route::get('/news','App\Http\Controllers\HomeController@news');
+
+
+// Route::get('/contact', function () {
+//     return view('pages.contact');
+// });
+
+Route::get('/contact','App\Http\Controllers\HomeController@contact');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 Route::get('/dashboard', 'App\Http\Controllers\AdminController@showdashboard');
