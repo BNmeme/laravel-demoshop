@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryProduct;
 
 // Route::get('/', function () {
 //     return view('layout');
@@ -45,7 +46,12 @@ Route::post('/save-category-product','App\Http\Controllers\CategoryProduct@save_
 
 Route::get('/unactive-category-product/{category_product_id}','App\Http\Controllers\CategoryProduct@unactive_category_product');
 Route::get('/active-category-product/{category_product_id}','App\Http\Controllers\CategoryProduct@active_category_product');
-Route::get('/detele-category-producy/{category_product_id}', 'App\Http\Controllers\CategoryProduct@delete_category_product');
+// Route::get('/edit-category-product/{category_product_id}', 'App\Http\Controllers\CategoryProduct@edit_category_product');
+Route::get('/detele-category-product/{category_product_id}', 'App\Http\Controllers\CategoryProduct@delete_category_product');
+Route::get('/delete-category-product/{category_product_id}', 'App\Http\Controllers\CategoryProduct@delete_category_product');
+Route::get('/delete-category-product/{category_product_id}', [CategoryProduct::class, 'delete_category_product']);
+
+
 
 Route::get('/add-brand-product','App\Http\Controllers\BrandProductController@add_brand_product');
 Route::get('/all-brand-product','App\Http\Controllers\BrandProductController@all_brand_product');

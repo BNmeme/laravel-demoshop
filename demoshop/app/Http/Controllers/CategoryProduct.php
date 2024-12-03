@@ -70,6 +70,7 @@ class CategoryProduct extends Controller
         return Redirect::to('all-category-product');
     }
 
+    
     public function delete_category_product($category_product_id)
     {
         $this->AuthLogin();
